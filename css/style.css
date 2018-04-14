@@ -1,0 +1,16 @@
+html,body{
+	height: 100%
+}
+
+body {
+	background-color: black;
+	background-attachment:fixed;
+	background: url("../img/background.jpg") center no-repeat fixed;
+	width: auto;
+	height: 100%;
+	background-size: 100% auto;
+}
+
+.navbar-nav li a {
+	color: white;
+}
