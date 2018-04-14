@@ -5,12 +5,12 @@ html,body{
 body {
 	background-color: black;
 	background-attachment:fixed;
-	background: url("../img/background.jpg") center no-repeat fixed;
+	background: url("../img/background.png") center no-repeat fixed;
 	width: auto;
 	height: 100%;
 	background-size: 100% auto;
 }
 
-.navbar-nav li a {
+a .nav-link {
 	color: white;
 }
