@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic|Montserrat:200,400|Noto+Sans|Oxygen|Raleway|Titillium+Web:200,400');
+
+/*
+|--------------------------------------------------------------------------
+|	Variables
+|--------------------------------------------------------------------------
+*/
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+
+
+/*
+|--------------------------------------------------------------------------
+|	Layout
+|--------------------------------------------------------------------------
+*/
+
+html, body {
+	height: 100%
+}
+
+body {
+	background-color: #000;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.intro {
+	padding-top: 80px;
+	background: url("../img/background.png");
+	/*background-attachment: fixed;*/
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	box-shadow: inset 0 -20px 100px 50px #000;
+}
+
+.view {
+	min-height: 100vh;
+}
+
+.displayer {
+	position: absolute;
+	bottom: 15px;
+
+}
+
+/*
+|--------------------------------------------------------------------------
+|	Navbar
+|--------------------------------------------------------------------------
+*/
+.nav-link {
+	position: relative;
+	font-size: 1.4em;
+	font-weight: 200;
+	color: #fff;
+	// min-width: 160px;
+	&::after {
+		transition: all .25s ease-in;
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		background-color: #fff;
+		height: 1px;
+		width: 0%;
+	}
+	&:hover::after {
+		width: 100%;
+		left: 0;
+		right: auto;
+	}
+
+	// Left & Right effect
+	@media (min-width: $breakpoint-md) {
+		&.left::after { right: 0; left: auto; }
+		&.right::after { left: 0; right: auto;}
+	}
+	@media (min-width: $breakpoint-lg) {
+		font-size: 1.6em;	
+	}
+}
+
+.navbar::after {
+	
+}
+
+/*
+|--------------------------------------------------------------------------
+|	Projects
+|--------------------------------------------------------------------------
+*/
+
+a.nav-link {
+	color: white !important;
+}
+
+
+
+
