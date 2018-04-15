@@ -49,3 +49,11 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+
+.hover-scale {
+	transition: all .25s ease-out;
+	&:hover {
+		z-index: 55;
+		transform: scale(1.1);
+	}
+}
