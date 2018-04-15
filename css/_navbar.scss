@@ -1,0 +1,79 @@
+.navbar {
+	transition: all .5s ease-in;
+	background-color: rgba(0,0,0,.75);
+
+	@media (min-width: $breakpoint-md) {
+		background-color: transparent;		
+	}
+	&::after {
+		transition: all .5s ease-in;
+		content: '';
+		position: absolute;
+		bottom: 0; left: 50%;
+		height: 1px;
+		width: 0%;
+		opacity: 0;
+		background-color: #fff;
+		box-shadow: inset 5px 0 1px $dark;
+	}
+	&.scrolled {
+		background-color: rgba(0,0,0,.75);
+		// box-shadow: 0 5px 10px $dark;
+		&::after {
+			left: 10%;
+			opacity: .7;
+			width: 80%;
+
+		}
+	}
+}
+
+.logo {
+	height: 60px;
+}
+
+.nav-link {
+	position: relative;
+	font-size: 1.4em;
+	font-weight: 200;
+	color: #ddd !important;
+	// min-width: 160px;
+	transition: all .25s ease-in;	
+	&.active, &:hover {
+		color: #fff !important;
+	}
+	&::after {
+		transition: all .25s ease-in;
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		background-color: #fff;
+		height: 1px;
+		width: 0%;
+	}
+	&:hover::after {
+		width: 100%;
+		left: 0;
+		right: auto;
+	}
+
+	// Left & Right effect
+	@media (min-width: $breakpoint-md) {
+		&.left::after { right: 0; left: auto; }
+		&.right::after { left: 0; right: auto;}
+	}
+	@media (min-width: $breakpoint-lg) {
+		font-size: 1.6em;	
+	}
+}
+#logo-web {
+	transition: all .25s ease-in;
+	z-index: 50;
+	transform: translateY(60%) scale(2);
+
+	&:hover {
+		transform: translateY(60%) scale(2.2);
+	}
+}

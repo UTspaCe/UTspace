@@ -1,0 +1,17 @@
+.project {
+	transition: all .5s ease;
+	div {
+		min-height: 300px;
+	}
+	.img {
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+	img {
+		max-width: 100%;
+	}
+	&:hover {
+		transform: scale(1.1);
+	}
+}
