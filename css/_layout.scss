@@ -1,3 +1,9 @@
+/*
+|--------------------------------------------------------------------------
+|	Main Layout
+|--------------------------------------------------------------------------
+*/
+
 html, body {
 	height: 100%
 }
@@ -10,6 +16,9 @@ body {
 
 .intro {
 	padding-top: 80px;
+	@media (min-width: $breakpoint-md) {
+		padding-top: 180px;	
+	}
 	background: url("../img/bg2.jpg");
 	/*background-attachment: fixed;*/
 	background-repeat: no-repeat;
@@ -28,13 +37,9 @@ body {
 	}
 }
 
-.view {
-	min-height: 100vh;
-}
-
 .displayer {
 	max-width: 500px;
-	background-color: rgba(0,0,0, .25);
+	background-color: rgba(0,0,0, .4);
 }
 .displayer-bottom {
 	position: absolute;
@@ -42,6 +47,65 @@ body {
 	@media (min-width: $breakpoint-md) {
 		left: 10%;
 	}
+}
+
+
+/*
+|--------------------------------------------------------------------------
+|	Links
+|--------------------------------------------------------------------------
+*/
+
+.nav-link, .link {
+	position: relative;
+	word-break: none;
+	text-decoration: none !important;
+	&::after {
+		transition: all .25s ease-in;
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		background-color: $blue;
+		height: 1px;
+		width: 0%;
+	}
+	&.red, &.red:hover {
+		color: $red !important;
+	}
+	&.red::after {
+		background-color: $red;
+	}
+	&:hover::after {
+		width: 100%;
+		left: 0;
+		right: auto;
+	}
+
+	// Left & Right effect
+	@media (min-width: $breakpoint-md) {
+		&.left::after { right: 0; left: auto; }
+		&.right::after { left: 0; right: auto;}
+	}
+}
+.link {
+	font-weight: 400;
+}
+
+/*
+|--------------------------------------------------------------------------
+|	Helpers
+|--------------------------------------------------------------------------
+| Background, hover animation, position
+*/
+
+.view {
+	min-height: 100vh;
+}
+
+.bg-dark {
+	background-color: rgba(0,0,0, .4) !important;
 }
 
 .center {
@@ -54,6 +118,18 @@ body {
 	transition: all .25s ease-out;
 	&:hover {
 		z-index: 55;
-		transform: scale(1.1);
+		transform: scale(1.05);
+	}
+}
+
+.hover-border-left {
+	transition: all .5s ease-out;
+	padding-right: 16px;
+	padding-left: 0;
+	border-left: 0 solid transparent;
+	&:hover {
+		padding-right: 0;
+		padding-left: 15px;
+		border-left: 1px solid $blue;
 	}
 }
